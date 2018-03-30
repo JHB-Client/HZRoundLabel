@@ -57,10 +57,12 @@ NS_ASSUME_NONNULL_END
         self.contentLabel.height = self.height - 2 * self.contentLabel.y;
     }
     
-    //
-    self.layer.cornerRadius = self.cornerRadius ? : kP(10);
     
-    self.clipsToBounds = true;
+    if (self.cornerRadius) {
+        self.layer.cornerRadius = self.cornerRadius;
+        self.clipsToBounds = true;
+    }
+    
     
 }
 
