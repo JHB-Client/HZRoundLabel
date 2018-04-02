@@ -10,10 +10,15 @@
 
 @interface HZRoundLabel : UIView
 @property (nonatomic, copy) NSString *contentStr;
+@property (nonatomic, copy) NSMutableAttributedString *contentAttrStr;
 @property (nonatomic, assign) CGFloat contentX;
 @property (nonatomic, assign) CGFloat contentY;
 @property (nonatomic, strong) UIFont *contentFont;
 @property (nonatomic, strong) UIColor *contentColor;
 @property (nonatomic, assign) CGFloat cornerRadius;
 @property (nonatomic, assign) BOOL isJustContent;
+@property (nonatomic, assign) CGFloat contentHieght;
+//
+@property (nonatomic, copy) void(^contentHeightBlock)(CGFloat height);
+@property (nonatomic, copy) void(^numberOfLinesBlock)(NSUInteger numberOfLines);
 @end

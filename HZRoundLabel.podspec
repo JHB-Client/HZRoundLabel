@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "HZRoundLabel"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "华卓组件化roundLabel"
 
   s.description  = <<-DESC
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios
 
-  s.source       = { :git => "https://github.com/jihuaibin2017/HZRoundLabel.git", :tag => "0.0.2" }
+  s.source       = { :git => "https://github.com/jihuaibin2017/HZRoundLabel.git", :tag => "0.0.3" }
   s.source_files  = "HZRoundLabel/**/*.{h,m}"
   s.requires_arc = true
 end

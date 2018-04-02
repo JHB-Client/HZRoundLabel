@@ -17,6 +17,7 @@
 		03480402206CE8E200ECB900 /* HZRoundLabelDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03480401206CE8E200ECB900 /* HZRoundLabelDemoUITests.m */; };
 		0348041B206CE93700ECB900 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 03480418206CE93700ECB900 /* UIView+Extension.m */; };
 		0348041C206CE93700ECB900 /* HZRoundLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0348041A206CE93700ECB900 /* HZRoundLabel.m */; };
+		03BE0B422072120000BEF027 /* UILabel+NumberOfLines.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BE0B412072120000BEF027 /* UILabel+NumberOfLines.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		03480418206CE93700ECB900 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		03480419206CE93700ECB900 /* HZRoundLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZRoundLabel.h; sourceTree = "<group>"; };
 		0348041A206CE93700ECB900 /* HZRoundLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZRoundLabel.m; sourceTree = "<group>"; };
+		03BE0B402072120000BEF027 /* UILabel+NumberOfLines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+NumberOfLines.h"; sourceTree = "<group>"; };
+		03BE0B412072120000BEF027 /* UILabel+NumberOfLines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+NumberOfLines.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +155,8 @@
 		03480416206CE93700ECB900 /* BgCode */ = {
 			isa = PBXGroup;
 			children = (
+				03BE0B402072120000BEF027 /* UILabel+NumberOfLines.h */,
+				03BE0B412072120000BEF027 /* UILabel+NumberOfLines.m */,
 				03480417206CE93700ECB900 /* UIView+Extension.h */,
 				03480418206CE93700ECB900 /* UIView+Extension.m */,
 			);
@@ -293,6 +298,7 @@
 			files = (
 				0348041B206CE93700ECB900 /* UIView+Extension.m in Sources */,
 				0348041C206CE93700ECB900 /* HZRoundLabel.m in Sources */,
+				03BE0B422072120000BEF027 /* UILabel+NumberOfLines.m in Sources */,
 				034803E2206CE8E200ECB900 /* ViewController.m in Sources */,
 				034803ED206CE8E200ECB900 /* main.m in Sources */,
 				034803DF206CE8E200ECB900 /* AppDelegate.m in Sources */,

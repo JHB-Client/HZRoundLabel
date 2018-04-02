@@ -8,6 +8,7 @@
 
 #import "HZRoundLabel.h"
 #import "UIView+Extension.h"
+#import "UILabel+NumberOfLines.h"
 #define kP(px) (CGFloat)(px * 0.5 * CGRectGetWidth([[UIScreen mainScreen] bounds]) / 375)
 NS_ASSUME_NONNULL_BEGIN
 @interface HZRoundLabel ()
@@ -20,7 +21,6 @@ NS_ASSUME_NONNULL_END
     self = [super initWithFrame:frame];
     if (self) {
         [self setUpSubViews];
-        self.backgroundColor = [UIColor redColor];
     }
     return self;
 }
@@ -33,14 +33,39 @@ NS_ASSUME_NONNULL_END
 
 
 - (void)layoutSubviews {
+    
     //
-    self.contentLabel.text = self.contentStr;
-    self.contentLabel.font = self.contentFont ? : [UIFont systemFontOfSize:kP(33)];
-    self.contentLabel.textColor = self.contentColor ? : [UIColor whiteColor];
-
+    self.contentLabel.font = self.contentFont ? : [UIFont systemFontOfSize:17];
+    self.contentLabel.textColor = self.contentColor ? : [UIColor blackColor];
     //
     self.contentLabel.y = self.contentY ? : kP(10);
     self.contentLabel.x = self.contentX ? : kP(10);
+    
+    //
+    if (self.contentAttrStr) {
+        
+        //
+        self.contentLabel.numberOfLines = 0;
+        self.contentLabel.backgroundColor = [UIColor yellowColor];
+        //
+        self.contentLabel.attributedText = self.contentAttrStr;
+        //
+        self.contentLabel.width = self.width - 2 * kP(10);
+        [self.contentLabel sizeToFit];
+        self.height = self.contentLabel.height + 2 * kP(10);
+        if (self.contentHeightBlock) {
+            self.contentHeightBlock(self.height);
+        }
+        
+        if (self.numberOfLinesBlock) {
+            NSUInteger numberOfLines = [self.contentLabel numberOfLabelContent];
+            self.numberOfLinesBlock(numberOfLines);
+        }
+        return;
+    }
+    
+    //
+    self.contentLabel.text = self.contentStr;
     self.contentLabel.width = self.width - 2 * self.contentLabel.x;
 
     //
@@ -63,6 +88,10 @@ NS_ASSUME_NONNULL_END
         self.clipsToBounds = true;
     }
     
+    if (self.numberOfLinesBlock) {
+        NSUInteger numberOfLines = [self.contentLabel numberOfLabelContent];
+        self.numberOfLinesBlock(numberOfLines);
+    }
     
 }
 
@@ -100,6 +129,12 @@ NS_ASSUME_NONNULL_END
 //
 - (void)setIsJustContent:(BOOL)isJustContent {
     _isJustContent = isJustContent;
+    [self setNeedsLayout];
+}
+
+//
+- (void)setContentAttrStr:(NSMutableAttributedString *)contentAttrStr {
+    _contentAttrStr = contentAttrStr;
     [self setNeedsLayout];
 }
 @end
